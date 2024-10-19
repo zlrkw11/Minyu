@@ -1,14 +1,13 @@
 import Image from "next/image";
-import Heart from "@/app/assets/heart.png";
 import Like from "@/app/assets/like.svg";
 export interface CardProps {
-  text: string;
+  text?: string;
 }
 export default function Home() {
   return (
     <div className="items-center justify-center flex flex-col m-8 gap-8">
       <h1 className="text-3xl">Profile picture</h1>
-      <p>hello</p>
+      <p>some random quotes</p>
 
       <div className="flex flex-col justify-center items-center w-full gap-4">
         <Card />
