@@ -1,5 +1,6 @@
 "use client";
 import { postBlog } from "@/routes/blogRoutes";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function New() {
@@ -25,6 +26,9 @@ export default function New() {
 
   return (
     <div className="flex flex-col items-center justify-center p-4 gap-8">
+      <Link href="/" className="border border-black rounded-md py-2 px-4">
+        Home
+      </Link>
       <h1 className="text-3xl font-bold">Make a new blog</h1>
       <input
         value={submitMsg}
