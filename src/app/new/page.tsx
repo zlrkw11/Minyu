@@ -2,6 +2,7 @@
 import { postBlog } from "@/routes/blogRoutes";
 import Link from "next/link";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 export default function New() {
   const [submitMsg, setSubmitMsg] = useState("");
