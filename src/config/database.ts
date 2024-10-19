@@ -1,7 +1,13 @@
+import { extendZod } from "@zodyac/zod-mongoose";
 import mongoose from "mongoose";
+import { z } from "zod";
+
+// Extend zod with @zodyac/zod-mongoose
+extendZod(z);
 
 // This gets MONGO_URL from .env
-const MONGO_URL = process.env.MONGO_URL || "mongodb://localhost:27017/digital-garden";
+const MONGO_URL =
+  process.env.MONGO_URL || "mongodb://localhost:27017/digital-garden";
 
 const db = mongoose
   .connect(MONGO_URL)
