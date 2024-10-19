@@ -1,5 +1,5 @@
 import zodSchema from "@zodyac/zod-mongoose";
-import { model } from "mongoose";
+import mongoose from "mongoose";
 import { z } from "zod";
 
 export const BlogSchema = z.object({
@@ -11,4 +11,5 @@ export const BlogSchema = z.object({
 
 export type Blog = z.infer<typeof BlogSchema>;
 
-export const BlogModel = model<Blog>("Blog", zodSchema(BlogSchema));
+export const BlogModel =
+  mongoose.models?.Blog ?? mongoose.model<Blog>("Blog", zodSchema(BlogSchema));
