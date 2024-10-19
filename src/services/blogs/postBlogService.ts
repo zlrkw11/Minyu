@@ -1,6 +1,6 @@
-import { Blog, BlogModel, BlogSchema } from "@/schemas/Blog";
+import { BlogModel, BlogSchema, NewBlog, NewBlogSchema } from "@/schemas/Blog";
 
-export default async function postBlogService(blog: Blog) {
-  const createdBlog = await BlogModel.create(BlogSchema.parse(blog));
+export default async function postBlogService(blog: NewBlog) {
+  const createdBlog = await BlogModel.create(NewBlogSchema.parse(blog));
   return BlogSchema.parse(createdBlog);
 }
