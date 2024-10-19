@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Like from "@/app/assets/like.svg";
 import { getBlogs } from "@/routes/blogRoutes";
+import Link from "next/link";
 
 export interface CardProps {
   text?: string;
@@ -11,7 +12,9 @@ export default async function Home() {
     <div className="items-center justify-center flex flex-col m-8 gap-8">
       <h1 className="text-3xl">Profile picture</h1>
       <p>some random quotes</p>
-
+      <Link href="/new" className="border border-black rounded-md py-2 px-4">
+        write
+      </Link>
       <div className="flex flex-col justify-center items-center w-full gap-4">
         {blogs.map((blog, index) => (
           <Card key={index} text={blog.content} />
