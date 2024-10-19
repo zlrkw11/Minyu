@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export default function New() {
   return (
     <div className="flex flex-col items-center justify-center p-4 gap-8">
