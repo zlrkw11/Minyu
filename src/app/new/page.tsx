@@ -7,6 +7,7 @@ export default function New() {
 
   const handleSubmit = async () => {
     const data = {
+      _id: "",
       title: "n",
       content: submitMsg,
       author: "zl",
