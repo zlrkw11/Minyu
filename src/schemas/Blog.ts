@@ -3,6 +3,7 @@ import { model } from "mongoose";
 import { z } from "zod";
 
 export const BlogSchema = z.object({
+  _id: z.string(),
   title: z.string(),
   content: z.string(),
   author: z.string(),
