@@ -1,5 +1,8 @@
 "use server";
 
-export async function getBlogs() {
-  return 
+import { Blog } from "@/schemas/Blog";
+
+export async function getBlogs(): Promise<Blog[]> {
+  // Return all blogs in database
+  return [];
 }
