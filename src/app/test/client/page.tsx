@@ -1,7 +1,7 @@
 "use client";
 
 import { getBlogs, postBlog } from "@/routes/blogRoutes";
-import { Blog } from "@/schemas/Blog";
+import { Blog, NewBlog } from "@/schemas/Blog";
 import { useEffect, useState } from "react";
 
 export default function TestPageClient() {
@@ -11,22 +11,22 @@ export default function TestPageClient() {
     getBlogs().then((blogs) => setBlogs(blogs));
   }, []);
 
-  function addBlog() {
-    const newBlog: Blog = {
-      _id: "TEMP_ID",
+  async function addBlog() {
+    const newBlog: NewBlog = {
       title: "New Blog",
       content: "This is a new blog.",
       author: "John Doe",
-    }
-    setBlogs([...blogs, newBlog]);
-    postBlog(newBlog).then((createdBlog) => {
-      setBlogs((prevBlogs) => prevBlogs.map((blog) => {
+    };
+    setBlogs([...blogs, { ...newBlog, _id: "TEMP_ID" }]);
+    const createdBlog = await postBlog(newBlog);
+    setBlogs((prevBlogs) =>
+      prevBlogs.map((blog: Blog) => {
         if (blog._id === "TEMP_ID") {
           return createdBlog;
         }
         return blog;
-      }));
-    });
+      })
+    );
   }
 
   return (
@@ -38,6 +38,7 @@ export default function TestPageClient() {
           <h2>{blog.title}</h2>
           <p>{blog.content}</p>
           <p>Author: {blog.author}</p>
+          <p>ID: {blog._id}</p>
         </div>
       ))}
       <button onClick={addBlog}>Add Blog!</button>
