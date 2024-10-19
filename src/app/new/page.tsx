@@ -27,7 +27,10 @@ export default function New() {
 
   return (
     <div className="flex flex-col items-center justify-center p-4 gap-8">
-      <Link href="/" className="border border-black rounded-md py-2 px-4">
+      <Link
+        href="/"
+        className="border-2 hover:border-zinc-300 hover:bg-slate-300 duration-300 border-black rounded-md py-2 px-4"
+      >
         Home
       </Link>
       <h1 className="text-3xl font-bold">Make a new blog</h1>
