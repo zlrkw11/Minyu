@@ -5,6 +5,7 @@ import { NextRequest } from "next/server";
 
 // const { auth } = NextAuth(authConfig);
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 // export default auth(async function middleware(req: NextRequest) {});
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
