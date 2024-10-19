@@ -9,7 +9,7 @@ export default function New() {
 
   const handleSubmit = async () => {
     const data = {
-      _id: "",
+      _id: uuidv4(),
       title: "n",
       content: submitMsg,
       author: "zl",
@@ -18,10 +18,10 @@ export default function New() {
     try {
       const response = await postBlog(data);
       console.log(response);
-      setSubmitMsg("Your blog post has been submitted!");
+      setSubmitMsg("");
     } catch (error) {
       console.error("Error:", error);
-      setSubmitMsg("Failed to submit your blog post.");
+      setSubmitMsg("Fail");
     }
   };
 
